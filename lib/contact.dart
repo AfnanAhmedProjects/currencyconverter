@@ -5,23 +5,27 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contact Us'),
+        title: const Text('Currency Predictions'),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home_rounded),
+            tooltip: 'Home', // Tooltip for Home
             onPressed: () => Navigator.pushNamed(context, '/home'),
           ),
           IconButton(
-            icon: Icon(Icons.info),
+            icon: const Icon(Icons.info_rounded),
+            tooltip: 'About', // Tooltip for About
             onPressed: () => Navigator.pushNamed(context, '/about'),
           ),
           IconButton(
-            icon: Icon(Icons.contact_mail),
+            icon: const Icon(Icons.email_rounded),
+            tooltip: 'Contact', // Tooltip for Contact
             onPressed: () => Navigator.pushNamed(context, '/contact'),
           ),
           IconButton(
-            icon: Icon(Icons.show_chart),
+            icon: const Icon(Icons.analytics_rounded),
+            tooltip: 'Predictions', // Tooltip for Predictions
             onPressed: () => Navigator.pushNamed(context, '/predictions'),
           ),
         ],
