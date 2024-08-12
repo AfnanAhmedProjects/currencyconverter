@@ -3,35 +3,36 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactPage extends StatelessWidget {
-  final List<Map<String, String>> developers = [
+final List<Map<String, String>> developers = [
     {
-      'name': 'John Doe',
-      'contact': '+1-800-123-4567',
-      'image': 'assets/john_doe.png', // Replace with your image asset path
+      'name': 'M Uzair Khan',
+      'contact': '03123066476',
+      'image': '', // Replace with your image asset path or placeholder
       'linkedin':
-          'https://www.linkedin.com/in/johndoe/', // LinkedIn profile URL
+          'https://www.linkedin.com/in/uzair-khan-8b6466261', // LinkedIn profile URL
     },
     {
-      'name': 'Jane Smith',
-      'contact': '+1-800-987-6543',
-      'image': 'assets/jane_smith.png', // Replace with your image asset path
+      'name': 'Syed Ashhad',
+      'contact': '03240678595',
+      'image': '', // Replace with your image asset path
       'linkedin':
-          'https://www.linkedin.com/in/janesmith/', // LinkedIn profile URL
+          'https://www.linkedin.com/in/syedmuhammadashhad/', // LinkedIn profile URL
     },
     {
-      'name': 'Mike Johnson',
-      'contact': '+1-800-555-1212',
-      'image': 'assets/mike_johnson.png', // Replace with your image asset path
+      'name': 'Muhammad Afnan',
+      'contact': '03202100642',
+      'image': '', // Replace with your image asset path
       'linkedin':
-          'https://www.linkedin.com/in/mikejohnson/', // LinkedIn profile URL
+          'https://www.linkedin.com/in/m-afnan-ahmed-82a8bb294/', // LinkedIn profile URL
     },
   ];
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Currency Predictions'),
+        title: const Text('Contact'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -77,8 +78,6 @@ class ContactPage extends StatelessWidget {
                 .map((developer) => _buildDeveloperCard(context, developer))
                 .toList(),
             SizedBox(height: 20.0),
-            // _buildSectionHeader('Contact Information'),
-            SizedBox(height: 10.0),
             _buildContactDetail(
               context,
               Icons.email,
@@ -91,7 +90,7 @@ class ContactPage extends StatelessWidget {
               Icons.phone,
               'Phone',
               'For immediate assistance, you can reach us on our customer support hotline.',
-              '+1-800-123-4567',
+              '+92-324-0678595',
             ),
             _buildContactDetail(
               context,
@@ -101,8 +100,6 @@ class ContactPage extends StatelessWidget {
               '123 Currency St, Karachi City, FC 12345',
             ),
             SizedBox(height: 20.0),
-            // _buildSectionHeader('Additional Support'),
-            SizedBox(height: 10.0),
             Text(
               'In addition to the above contact methods, you can also reach out to us through our social media channels. We are active on the following platforms:',
               style: Theme.of(context).textTheme.bodyMedium,
@@ -118,12 +115,12 @@ class ContactPage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20.0),
-                        ElevatedButton.icon(
+            ElevatedButton.icon(
               icon: Icon(Icons.chat),
               label: Text('Contact Us Now'),
-              onPressed: _launchWhatsApp, // Call the method to launch WhatsApp link
+              onPressed:
+                  _launchWhatsApp, // Call the method to launch WhatsApp link
             ),
-
           ],
         ),
       ),
@@ -139,7 +136,6 @@ class ContactPage extends StatelessWidget {
     }
   }
 
-
   Widget _buildDeveloperCard(
       BuildContext context, Map<String, String> developer) {
     return Card(
@@ -147,8 +143,14 @@ class ContactPage extends StatelessWidget {
       elevation: 2.0,
       child: ListTile(
         leading: CircleAvatar(
-          backgroundImage: AssetImage(developer['image']!),
+          backgroundImage: developer['image']!.isNotEmpty
+              ? AssetImage(developer['image']!)
+              : null, // Set to null if image is empty
           radius: 30.0,
+          backgroundColor: Colors.grey.shade200, // Fallback color if no image
+          child: developer['image']!.isEmpty
+              ? Icon(Icons.person, size: 30.0, color: Colors.grey.shade600)
+              : null, // Show an icon if no image is available
         ),
         title: Text(
           developer['name']!,
@@ -159,8 +161,13 @@ class ContactPage extends StatelessWidget {
         subtitle: Text(developer['contact']!),
         trailing: IconButton(
           icon: Icon(FontAwesomeIcons.linkedin),
-          onPressed: () {
-            // Handle LinkedIn link navigation
+          onPressed: () async {
+            final url = developer['linkedin']!;
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw 'Could not launch $url';
+            }
           },
           tooltip: 'LinkedIn',
         ),
@@ -209,22 +216,13 @@ class ContactPage extends StatelessWidget {
     );
   }
 
-  // Widget _buildSectionHeader(String title) {
-  //   return Text(
-  //     title,
-  //     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-  //           fontWeight: FontWeight.bold,
-  //           color: Theme.of(context).primaryColor,
-  //         ),
-  //   );
-  // }
-
   Widget _buildSocialIcon(IconData icon, String tooltip) {
     return IconButton(
       icon: Icon(icon, size: 36.0),
       tooltip: tooltip,
       onPressed: () {
         // Handle social media link
+        // Add social media URLs or links as needed
       },
     );
   }

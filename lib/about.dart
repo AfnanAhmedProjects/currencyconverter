@@ -5,7 +5,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Currency Predictions'),
+        title: const Text('About'),
         centerTitle: true,
         actions: [
           IconButton(

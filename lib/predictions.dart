@@ -23,14 +23,28 @@ class PredictionsPage extends StatelessWidget {
     'INR': [FlSpot(0, 83.0), FlSpot(1, 82.5), FlSpot(2, 84.0), FlSpot(3, 83.5)],
     'CNY': [FlSpot(0, 7.05), FlSpot(1, 7.10), FlSpot(2, 7.00), FlSpot(3, 7.08)],
     'CHF': [FlSpot(0, 0.92), FlSpot(1, 0.93), FlSpot(2, 0.91), FlSpot(3, 0.92)],
-    // Add more predictions as needed
+    'NZD': [FlSpot(0, 1.42), FlSpot(1, 1.40), FlSpot(2, 1.43), FlSpot(3, 1.41)],
+    'SGD': [FlSpot(0, 1.35), FlSpot(1, 1.36), FlSpot(2, 1.34), FlSpot(3, 1.35)],
+    'MXN': [FlSpot(0, 20.0), FlSpot(1, 19.5), FlSpot(2, 20.3), FlSpot(3, 19.8)],
+    'ZAR': [FlSpot(0, 14.5), FlSpot(1, 14.8), FlSpot(2, 14.2), FlSpot(3, 14.4)],
+    'BRL': [FlSpot(0, 5.0), FlSpot(1, 4.9), FlSpot(2, 5.1), FlSpot(3, 5.0)],
+    'RUB': [FlSpot(0, 73.0), FlSpot(1, 74.5), FlSpot(2, 72.5), FlSpot(3, 73.5)],
+    'KRW': [
+      FlSpot(0, 1150.0),
+      FlSpot(1, 1145.0),
+      FlSpot(2, 1160.0),
+      FlSpot(3, 1155.0)
+    ],
+    'SEK': [FlSpot(0, 8.6), FlSpot(1, 8.7), FlSpot(2, 8.5), FlSpot(3, 8.6)],
+    'NOK': [FlSpot(0, 8.9), FlSpot(1, 9.0), FlSpot(2, 8.8), FlSpot(3, 8.9)],
+    'TRY': [FlSpot(0, 8.0), FlSpot(1, 8.2), FlSpot(2, 8.1), FlSpot(3, 8.3)],
   };
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Currency Predictions'),
+        title: const Text('Predictions'),
         centerTitle: true,
         actions: [
           IconButton(
