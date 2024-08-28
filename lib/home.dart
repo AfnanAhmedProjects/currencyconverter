@@ -12,72 +12,72 @@ class _HomePageState extends State<HomePage> {
   String targetCurrency = 'EUR';
   double result = 0.0;
   bool isLoading = false;
-
-  Map<String, Map<String, dynamic>> exchangeRates = {
-    'USD': {'rate': 1.0, 'icon': Icons.attach_money},
-    'EUR': {'rate': 0.85, 'icon': Icons.euro},
-    'GBP': {'rate': 0.73, 'icon': Icons.currency_pound},
-    'AUD': {'rate': 1.34, 'icon': Icons.currency_exchange},
-    'CAD': {'rate': 1.25, 'icon': Icons.currency_exchange},
-    'JPY': {'rate': 110.0, 'icon': Icons.currency_yen},
-    'PKR': {'rate': 280.0, 'icon': Icons.currency_exchange},
-    'INR': {'rate': 83.0, 'icon': Icons.currency_rupee},
-    'CNY': {'rate': 7.05, 'icon': Icons.currency_yuan},
-    'CHF': {'rate': 0.92, 'icon': Icons.currency_exchange},
-    'NZD': {'rate': 1.40, 'icon': Icons.currency_exchange},
-    'SGD': {'rate': 1.35, 'icon': Icons.currency_exchange},
-    'HKD': {'rate': 7.85, 'icon': Icons.currency_exchange},
-    'KRW': {'rate': 1320.0, 'icon': Icons.currency_exchange},
-    'MXN': {'rate': 18.50, 'icon': Icons.currency_exchange},
-    'BRL': {'rate': 5.35, 'icon': Icons.currency_exchange},
-    'ZAR': {'rate': 19.50, 'icon': Icons.currency_exchange},
-    'TRY': {'rate': 26.85, 'icon': Icons.currency_exchange},
-    'RUB': {'rate': 94.50, 'icon': Icons.currency_exchange},
-    'SEK': {'rate': 10.05, 'icon': Icons.currency_exchange},
-    'NOK': {'rate': 10.95, 'icon': Icons.currency_exchange},
-    'DKK': {'rate': 6.35, 'icon': Icons.currency_exchange},
-    'ILS': {'rate': 3.45, 'icon': Icons.currency_exchange},
-    'PLN': {'rate': 4.00, 'icon': Icons.currency_exchange},
-    'HUF': {'rate': 380.0, 'icon': Icons.currency_exchange},
-    'CZK': {'rate': 22.0, 'icon': Icons.currency_exchange},
-    'THB': {'rate': 34.0, 'icon': Icons.currency_exchange},
-    'MYR': {'rate': 4.60, 'icon': Icons.currency_exchange},
-    'IDR': {'rate': 15000.0, 'icon': Icons.currency_exchange},
-    'SAR': {'rate': 3.75, 'icon': Icons.currency_exchange},
-    'AED': {'rate': 3.67, 'icon': Icons.currency_exchange},
-    'KWD': {'rate': 0.31, 'icon': Icons.currency_exchange},
-    'BHD': {'rate': 0.38, 'icon': Icons.currency_exchange},
-    'OMR': {'rate': 0.39, 'icon': Icons.currency_exchange},
-    'JOD': {'rate': 0.71, 'icon': Icons.currency_exchange},
-    'LBP': {'rate': 1510.0, 'icon': Icons.currency_exchange},
-    'DZD': {'rate': 135.0, 'icon': Icons.currency_exchange},
-    'MAD': {'rate': 10.40, 'icon': Icons.currency_exchange},
-    'TND': {'rate': 3.09, 'icon': Icons.currency_exchange},
-    'MDL': {'rate': 18.75, 'icon': Icons.currency_exchange},
-    'PEN': {'rate': 3.75, 'icon': Icons.currency_exchange},
-    'GTQ': {'rate': 7.85, 'icon': Icons.currency_exchange},
-    'COP': {'rate': 4250.0, 'icon': Icons.currency_exchange},
-    'PAB': {'rate': 1.0, 'icon': Icons.currency_exchange},
-    'NIO': {'rate': 36.0, 'icon': Icons.currency_exchange},
-    'CRC': {'rate': 660.0, 'icon': Icons.currency_exchange},
-    'PYG': {'rate': 7350.0, 'icon': Icons.currency_exchange},
-    'UYU': {'rate': 39.5, 'icon': Icons.currency_exchange},
-    'VEF': {'rate': 0.25, 'icon': Icons.currency_exchange},
-    'BWP': {'rate': 12.45, 'icon': Icons.currency_exchange},
-    'MZN': {'rate': 63.5, 'icon': Icons.currency_exchange},
-    'NAD': {'rate': 19.50, 'icon': Icons.currency_exchange},
-    'ETB': {'rate': 55.0, 'icon': Icons.currency_exchange},
-    'RWF': {'rate': 1100.0, 'icon': Icons.currency_exchange},
-    'UGX': {'rate': 3710.0, 'icon': Icons.currency_exchange},
-    'TZS': {'rate': 2350.0, 'icon': Icons.currency_exchange},
-    'MWK': {'rate': 850.0, 'icon': Icons.currency_exchange},
-    'ZWL': {'rate': 0.01, 'icon': Icons.currency_exchange},
-    'CUP': {'rate': 24.0, 'icon': Icons.currency_exchange},
-    'CUC': {'rate': 1.0, 'icon': Icons.currency_exchange},
-    'SYP': {'rate': 2500.0, 'icon': Icons.currency_exchange},
-    'AFN': {'rate': 87.0, 'icon': Icons.currency_exchange},
-    'TMT': {'rate': 3.5, 'icon': Icons.currency_exchange},
-    'GHS': {'rate': 13.6, 'icon': Icons.currency_exchange},
+  Map<String, double> exchangeRates = {
+    'USD': 1.0,
+    'EUR': 0.85,
+    'GBP': 0.73,
+    'AUD': 1.34,
+    'CAD': 1.25,
+    'JPY': 110.0,
+    'PKR': 280.0,
+    'INR': 83.0,
+    'CNY': 7.05,
+    'CHF': 0.92,
+    'NZD': 1.40,
+    'SGD': 1.35,
+    'HKD': 7.85,
+    'KRW': 1320.0,
+    'MXN': 18.50,
+    'BRL': 5.35,
+    'ZAR': 19.50,
+    'TRY': 26.85,
+    'RUB': 94.50,
+    'SEK': 10.05,
+    'NOK': 10.95,
+    'DKK': 6.35,
+    'ILS': 3.45,
+    'PLN': 4.00,
+    'HUF': 380.0,
+    'CZK': 22.0,
+    'THB': 34.0,
+    'MYR': 4.60,
+    'IDR': 15000.0,
+    'SAR': 3.75,
+    'AED': 3.67,
+    'KWD': 0.31,
+    'BHD': 0.38,
+    'OMR': 0.39,
+    'JOD': 0.71,
+    'LBP': 1510.0,
+    'DZD': 135.0,
+    'MAD': 10.40,
+    'TND': 3.09,
+    'MDL': 18.75,
+    'PEN': 3.75,
+    'GTQ': 7.85,
+    'COP': 4250.0,
+    'PAB': 1.0,
+    'NIO': 36.0,
+    'CRC': 660.0,
+    'PYG': 7350.0,
+    'UYU': 39.5,
+    'VEF': 0.25,
+    'BWP': 12.45,
+    'MZN': 63.5,
+    'NAD': 19.50,
+    'ETB': 55.0,
+    'RWF': 1100.0,
+    'UGX': 3710.0,
+    'TZS': 2350.0,
+    'KWD': 0.31,
+    'MWK': 850.0,
+    'ZWL': 0.01,
+    'CUP': 24.0,
+    'CUC': 1.0,
+    'SYP': 2500.0,
+    'AFN': 87.0,
+    'TMT': 3.5,
+    'GHS': 13.6,
   };
 
   @override
@@ -102,8 +102,8 @@ class _HomePageState extends State<HomePage> {
   void convertCurrency() {
     if (exchangeRates.containsKey(targetCurrency) &&
         exchangeRates.containsKey(baseCurrency)) {
-      double rate = exchangeRates[targetCurrency]!['rate'] /
-          exchangeRates[baseCurrency]!['rate'];
+      double rate =
+          exchangeRates[targetCurrency]! / exchangeRates[baseCurrency]!;
       setState(() {
         result = amount * rate;
       });
@@ -143,14 +143,30 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: const [
-            Icon(Icons.home_rounded),
-            SizedBox(width: 10),
-            Text('Home'),
-          ],
-        ),
-        centerTitle: false,
+        title: const Text('Home'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home_rounded),
+            tooltip: 'Home', // Tooltip for Home
+            onPressed: () => Navigator.pushNamed(context, '/home'),
+          ),
+          IconButton(
+            icon: const Icon(Icons.info_rounded),
+            tooltip: 'About', // Tooltip for About
+            onPressed: () => Navigator.pushNamed(context, '/about'),
+          ),
+          IconButton(
+            icon: const Icon(Icons.email_rounded),
+            tooltip: 'Contact', // Tooltip for Contact
+            onPressed: () => Navigator.pushNamed(context, '/contact'),
+          ),
+          IconButton(
+            icon: const Icon(Icons.analytics_rounded),
+            tooltip: 'Predictions', // Tooltip for Predictions
+            onPressed: () => Navigator.pushNamed(context, '/predictions'),
+          ),
+        ],
       ),
       body: isLoading
           ? Center(
@@ -176,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
-                      prefixIcon: Icon(Icons.currency_exchange),
+                      prefixIcon: Icon(Icons.monetization_on),
                     ),
                     keyboardType:
                         TextInputType.numberWithOptions(decimal: true),
@@ -196,16 +212,12 @@ class _HomePageState extends State<HomePage> {
                         convertCurrency();
                       });
                     },
-                    items: exchangeRates.keys.map((currency) {
-                      return DropdownMenuItem(
+                    items: exchangeRates.keys
+                        .toList()
+                        .map<DropdownMenuItem<String>>((String currency) {
+                      return DropdownMenuItem<String>(
                         value: currency,
-                        child: Row(
-                          children: <Widget>[
-                            Icon(exchangeRates[currency]!['icon']),
-                            SizedBox(width: 8.0),
-                            Text(currency),
-                          ],
-                        ),
+                        child: Text(currency),
                       );
                     }).toList(),
                     decoration: InputDecoration(
@@ -216,6 +228,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(height: 20.0),
+                  Text(
+                    '=',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontSize: 36.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  SizedBox(height: 20.0),
                   DropdownButtonFormField<String>(
                     value: targetCurrency,
                     onChanged: (value) {
@@ -224,16 +245,12 @@ class _HomePageState extends State<HomePage> {
                         convertCurrency();
                       });
                     },
-                    items: exchangeRates.keys.map((currency) {
-                      return DropdownMenuItem(
+                    items: exchangeRates.keys
+                        .toList()
+                        .map<DropdownMenuItem<String>>((String currency) {
+                      return DropdownMenuItem<String>(
                         value: currency,
-                        child: Row(
-                          children: <Widget>[
-                            Icon(exchangeRates[currency]!['icon']),
-                            SizedBox(width: 8.0),
-                            Text(currency),
-                          ],
-                        ),
+                        child: Text(currency),
                       );
                     }).toList(),
                     decoration: InputDecoration(
@@ -244,39 +261,20 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(height: 20.0),
-                  ElevatedButton.icon(
-                    onPressed: showConversionDialog,
-                    icon: Icon(Icons.calculate),
-                    label: Text('Convert'),
+                  ElevatedButton(
+                    onPressed: () {
+                      convertCurrency();
+                      showConversionDialog();
+                    },
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.teal,
                       padding: EdgeInsets.symmetric(vertical: 15.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.0),
-                      border: Border.all(color: Colors.grey),
-                      color: Colors.teal.shade50,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
-                        Text(
-                          'Conversion Result:',
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          '$amount $baseCurrency = ${result.toStringAsFixed(2)} $targetCurrency',
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                fontSize: 22.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                        ),
-                      ],
-                    ),
+                    child: Text('Convert',
+                        style: Theme.of(context).textTheme.labelLarge),
                   ),
                 ],
               ),
